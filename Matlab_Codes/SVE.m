@@ -20,7 +20,7 @@ image_mean_128 = ones(X, Y) * 128;
 [U_mean_128, S_mean_128, V_mean_128] = svd(image_mean_128); 
 
 %% OBTAINING THE ZETA COEFFICIENT
-zeta = max(image_mean_128)/max(image);   % zeta coefficient= max singular value of sigma / max value of image
+zeta = max(S_mean_128)/max(S);   % zeta coefficient= max singular value of sigma of constant 128 image / max value of sigma of input image
 
 %% CALCULATING NEW SIGMA
 new_sigma = zeta * S; %updating the new singular value matrix(sigma)
